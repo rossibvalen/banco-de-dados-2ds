@@ -1,0 +1,22 @@
+CREATE TABLE FARMACIA ( 
+ tel_farmacia INT,  
+ CNPJ_farmacia INT PRIMARY KEY,  
+ nome_farmacia INT,  
+ end_farmacia INT  
+); 
+
+CREATE TABLE PRODUTO ( 
+ cod_produto INT PRIMARY KEY,  
+ qtd_produto INT,  
+ valor_produto INT,  
+ idFARMACIA INT 
+); 
+
+CREATE TABLE FARMACEUTICO ( 
+ RG_farmaceutico INT PRIMARY KEY,  
+ nome_farmaceutico INT,  
+ idFARMACIA INT  
+); 
+
+ALTER TABLE PRODUTO ADD FOREIGN KEY(idFARMACIA) REFERENCES FARMACIA (idFARMACIA);
+ALTER TABLE FARMACEUTICO ADD FOREIGN KEY(idFARMACIA) REFERENCES FARMACIA (idFARMACIA);
