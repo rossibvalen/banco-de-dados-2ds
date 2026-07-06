@@ -18,4 +18,10 @@ CREATE TABLE Compras (
 );
 SELECT * FROM Clientes; 
 SELECT * FROM Compras; 
-
+SELECT
+Clientes.nomeCliente AS "Nome do Cliente",
+Compras.NomeLivro AS "Nome do Livro"
+FROM
+Compras
+INNER JOIN
+Clientes ON Compras.ClienteID = Clientes.ID;
